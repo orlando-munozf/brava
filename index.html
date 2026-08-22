@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brava — Profesionalización comercial para equipos de venta</title>
+<meta name="description" content="Programa de 4 semanas que instala método donde antes había improvisación. Para empresas con equipos comerciales que venden distinto entre sí.">
+<meta property="og:title" content="Brava — Vender es un juego de sistema, no de talento">
+<meta property="og:description" content="Instalamos el método comercial que hace que tu equipo deje de depender del talento individual.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ===================================================================
+     META PIXEL — pega aquí tu código de Meta Business Suite.
+     Eventos > Configurar > Instalar código manualmente.
+     Reemplaza TU_PIXEL_ID y descomenta el bloque.
+=================================================================== -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','TU_PIXEL_ID'); fbq('track','PageView');
+</script>
+-->
+
+<style>
+:root{
+  --bg:#050A07;--surface:#0B130E;--surface2:#101A14;--line:#1E2E24;
+  --neon:#0DEB6E;--ink:#EDF2EE;--mute:#7E8E84;
+  --display:'Bebas Neue',Impact,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1060px;margin:0 auto;padding:0 26px}
+p{margin:0 0 18px}
+
+#prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--neon);z-index:90;box-shadow:0 0 12px rgba(13,235,110,.8)}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--neon);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:0;height:1px;background:var(--neon);flex:none;transition:width .9s var(--ease) .15s}
+.rv.in .eyebrow::before,.eyebrow.on::before{width:34px}
+h1{font-family:var(--display);font-size:clamp(44px,8.5vw,92px);line-height:.94;margin:22px 0 0;font-weight:400;letter-spacing:.01em}
+h2{font-family:var(--display);font-size:clamp(32px,6vw,62px);line-height:.98;margin:20px 0 0;font-weight:400;letter-spacing:.01em}
+h3{font-family:var(--display);font-size:26px;letter-spacing:.03em;margin:0 0 10px;font-weight:400}
+.neon{color:var(--neon)}
+
+.mask{display:block;overflow:hidden}
+.mask>span{display:block;transform:translateY(105%);transition:transform 1s var(--ease)}
+.go .mask>span{transform:none}
+.go .mask:nth-of-type(2)>span{transition-delay:.09s}
+.go .mask:nth-of-type(3)>span{transition-delay:.18s}
+
+.btn{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:var(--mono);font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--neon);color:#04140A;text-decoration:none;font-weight:500;
+  padding:17px 30px;border:none;border-radius:2px;cursor:pointer;
+  transition:transform .22s var(--ease), box-shadow .22s var(--ease), background .22s;
+}
+.btn>span{position:relative;z-index:2}
+.btn::after{
+  content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;z-index:1;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  transition:left .65s var(--ease);
+}
+.btn:hover::after,.btn:focus-visible::after{left:140%}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px);box-shadow:0 14px 34px -12px rgba(13,235,110,.6);background:#25FF85}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,rgba(13,235,110,.16),transparent)}
+.btn.ghost:hover{border-color:var(--neon);color:var(--neon);box-shadow:none}
+.btn-note{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.05em;margin-top:14px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(5,10,7,.92);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
+.logo{font-family:var(--display);font-size:26px;letter-spacing:.05em;color:var(--ink)}
+.logo b{color:var(--neon);font-weight:400}
+nav .btn{padding:11px 20px;font-size:11.5px}
+@media(max-width:620px){nav .btn{display:none}}
+
+.hero{position:relative;padding:150px 0 92px;overflow:hidden}
+.hero .glow{
+  position:absolute;top:-18%;right:-25%;width:840px;height:840px;
+  background:radial-gradient(circle,rgba(13,235,110,.15),transparent 62%);
+  pointer-events:none;animation:drift 18s ease-in-out infinite;
+}
+.hero .grid{
+  position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:linear-gradient(rgba(13,235,110,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,235,110,.05) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 32% 42%,#000,transparent 75%);
+  mask-image:radial-gradient(ellipse 70% 60% at 32% 42%,#000,transparent 75%);
+}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-38px,30px) scale(1.08)}}
+.hero-grid{display:grid;grid-template-columns:1fr;position:relative;z-index:2;max-width:820px}
+.hero h1{font-size:clamp(46px,9.5vw,108px)}
+.hero .sub{max-width:560px;margin-top:30px;font-size:19.5px;color:#C4D0C8;opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease) .42s,transform .9s var(--ease) .42s}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease) .54s,transform .9s var(--ease) .54s}
+.hero .btn-note{opacity:0;transition:opacity .9s var(--ease) .7s}
+.go .sub,.go .cta-row{opacity:1;transform:none}
+.go .btn-note{opacity:1}
+
+
+section{padding:96px 0;position:relative;border-top:1px solid var(--line)}
+section::after{
+  content:"";position:absolute;top:-1px;left:0;height:1px;width:0;
+  background:linear-gradient(90deg,transparent,var(--neon),transparent);
+  box-shadow:0 0 14px rgba(13,235,110,.7);
+  transition:width 1.4s var(--ease);
+}
+section.beam::after{width:100%}
+.lead{max-width:660px;margin-top:24px;font-size:18.5px;color:#C4D0C8}
+
+.marquee{position:relative;margin-top:46px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.marquee+.marquee{margin-top:18px}
+.track{display:flex;gap:18px;width:max-content;animation:slide 46s linear infinite}
+.track.rev{animation-direction:reverse;animation-duration:56s}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.q{
+  flex:none;background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--neon);
+  padding:20px 26px;font-style:italic;font-size:16.5px;color:#CBD6CE;white-space:nowrap;
+  transition:border-color .3s,color .3s;
+}
+.q:hover{border-color:var(--neon);color:var(--ink)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:30px}}
+.stmt{font-family:var(--display);font-size:clamp(48px,9vw,92px);line-height:.9;letter-spacing:.01em;will-change:transform}
+
+.rows{border-top:1px solid var(--line);margin-top:36px}
+.row{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding-left .3s var(--ease),background .3s}
+.row:hover{padding-left:14px;background:linear-gradient(90deg,rgba(13,235,110,.05),transparent 55%)}
+.row .n{font-family:var(--mono);font-size:12px;color:var(--neon);padding-top:5px}
+.row .t{font-weight:500;font-size:17px}
+.row .d{font-size:15px;color:var(--mute);margin-top:4px}
+
+.weeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.wk{background:var(--bg);padding:28px 24px;position:relative;transition:background .35s,opacity .85s var(--ease),transform .85s var(--ease);opacity:0;transform:translateY(28px)}
+.wk.in{opacity:1;transform:none}
+.wk::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:var(--neon);transition:width .6s var(--ease) .25s}
+.wk.in::before{width:100%}
+.wk:hover{background:var(--surface2)}
+.wk .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:rgba(13,235,110,.62);text-transform:uppercase;transition:color .35s}
+.wk:hover .n{color:var(--neon)}
+.wk h4{font-family:var(--display);font-size:20px;letter-spacing:.03em;margin:8px 0 10px;font-weight:400}
+
+/* ---------- iconos de línea ---------- */
+.ico{display:block;width:46px;height:46px;color:var(--neon);margin-bottom:20px;overflow:visible}
+.ico [stroke]{stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:square;stroke-linejoin:miter}
+.ico .fill{fill:currentColor;stroke:none}
+.ico .brk{opacity:.38;transition:opacity .4s}
+.wk:hover .ico .brk,.close-inner:hover .ico .brk{opacity:1}
+.ico [stroke]{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.15s var(--ease) .3s}
+.wk.in .ico [stroke],.rv.in .ico [stroke]{stroke-dashoffset:0}
+.ico .fill{opacity:0;transition:opacity .5s var(--ease) 1s}
+.wk.in .ico .fill,.rv.in .ico .fill{opacity:1}
+.wk:nth-child(2).in .ico [stroke]{transition-delay:.44s}
+.wk:nth-child(3).in .ico [stroke]{transition-delay:.56s}
+.wk:nth-child(4).in .ico [stroke]{transition-delay:.68s}
+.ico.big{width:64px;height:64px;margin:0 auto 24px}
+.wk p{font-size:14.5px;color:#B2BFB7;margin:0}
+
+.case{background:linear-gradient(160deg,rgba(13,235,110,.07),transparent 55%);border:1px solid rgba(13,235,110,.28);padding:46px;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;margin-top:40px}
+@media(max-width:760px){.case{grid-template-columns:1fr;gap:26px;padding:30px}}
+.case .metric{font-family:var(--display);font-size:clamp(74px,13vw,124px);color:var(--neon);line-height:.85;letter-spacing:.01em;animation:pulse 3.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{text-shadow:0 0 40px rgba(13,235,110,.28)}50%{text-shadow:0 0 64px rgba(13,235,110,.55)}}
+.case .metric small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.13em;color:var(--mute);text-transform:uppercase;margin-top:14px;line-height:1.6;text-shadow:none}
+.case p:last-child{margin-bottom:0}
+.case .brand{font-family:var(--display);font-size:30px;letter-spacing:.06em;margin-bottom:12px}
+
+.guarantee{border:1px dashed rgba(13,235,110,.45);background:var(--surface);padding:42px;text-align:center;margin-top:16px;position:relative;overflow:hidden}
+.guarantee .shine{position:absolute;top:0;left:-30%;width:30%;height:100%;background:linear-gradient(100deg,transparent,rgba(13,235,110,.1),transparent);animation:sweep 6.5s ease-in-out infinite;pointer-events:none}
+@keyframes sweep{0%{left:-30%}55%,100%{left:130%}}
+.guarantee .stampy{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--neon);position:relative}
+.guarantee h3{font-size:34px;margin:16px auto 14px;max-width:680px;line-height:1.05;position:relative}
+.guarantee p{max-width:560px;margin:0 auto;color:var(--mute);font-size:15px;position:relative}
+
+.obj{border-bottom:1px solid var(--line)}
+.obj summary{cursor:pointer;list-style:none;padding:24px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:18px;font-weight:500;transition:color .25s,padding-left .3s var(--ease)}
+.obj summary:hover{color:var(--neon);padding-left:10px}
+.obj summary::-webkit-details-marker{display:none}
+.obj summary::after{content:"+";font-family:var(--mono);color:var(--neon);font-size:22px;flex:none;transition:transform .35s var(--ease)}
+.obj[open] summary::after{transform:rotate(135deg)}
+.obj .a{padding:0 0 26px;color:#B6C2BA;font-size:16px;max-width:720px;animation:drop .45s var(--ease)}
+@keyframes drop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.obj .a p:last-child{margin-bottom:0}
+
+.close{padding:104px 0 40px;position:relative;overflow:hidden;border-top:1px solid var(--line)}
+.close .halo{position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);width:940px;height:620px;background:radial-gradient(ellipse,rgba(13,235,110,.13),transparent 65%);pointer-events:none;animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.72;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.09)}}
+.close-inner{position:relative;text-align:center}
+.close h2{margin-bottom:22px}
+.close .lead{margin:0 auto 34px}
+.form{max-width:520px;margin:38px auto 0;text-align:left;background:var(--surface);border:1px solid var(--line);padding:32px;transition:border-color .4s}
+.form:focus-within{border-color:rgba(13,235,110,.4)}
+.form label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);margin:0 0 7px}
+.form input,.form select{width:100%;padding:13px 14px;background:var(--bg);border:1px solid var(--line);color:var(--ink);font-family:var(--body);font-size:15.5px;border-radius:2px;margin-bottom:18px;transition:border-color .25s,box-shadow .25s}
+.form input:focus,.form select:focus{outline:none;border-color:var(--neon);box-shadow:0 0 0 3px rgba(13,235,110,.1)}
+.form .btn{width:100%;justify-content:center;margin-top:6px}
+
+footer{padding:46px 0 60px;border-top:1px solid var(--line);text-align:center}
+footer .logo{font-size:30px;margin-bottom:14px;display:block}
+footer .contact{font-family:var(--mono);font-size:13px;color:var(--mute);line-height:2}
+footer a{color:var(--mute);text-decoration:none;transition:color .25s}
+footer a:hover{color:var(--neon)}
+
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:70;padding:12px 16px;background:rgba(5,10,7,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:none;transform:translateY(115%);transition:transform .4s var(--ease)}
+.sticky.show{transform:translateY(0)}
+.sticky .btn{width:100%;justify-content:center}
+@media(max-width:620px){.sticky{display:block}body{padding-bottom:74px}}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.wk,.hero .sub,.hero .cta-row,.hero .btn-note{opacity:1!important;transform:none!important}
+  .mask>span{transform:none!important}
+  .eyebrow::before,section::after,.wk::before{width:100%}
+  .eyebrow::before{width:34px}
+  .track{animation:none;width:auto;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<nav id="nav"><div class="wrap">
+  <span class="logo">BRA<b>VA</b></span>
+  <a class="btn" href="#scanner"><span>Agendar Scanner</span></a>
+</div></nav>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero" id="hero">
+  <div class="glow"></div><div class="grid"></div>
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <div class="eyebrow on">Profesionalización comercial</div>
+      <h1>
+        <span class="mask"><span>VENDER ES UN</span></span>
+        <span class="mask"><span>JUEGO DE <i style="font-style:normal" class="neon">SISTEMA</i>,</span></span>
+        <span class="mask"><span>NO DE TALENTO.</span></span>
+      </h1>
+      <p class="sub">Si tu equipo vende bien un mes y mal el siguiente, el problema no es la gente. Es que cada quien vende como puede, y nadie escribió cómo se vende aquí.</p>
+      <div class="cta-row">
+        <a class="btn" href="#scanner"><span>Agendar mi Scanner gratis</span></a>
+        <a class="btn ghost" href="#problema"><span>Ver de qué se trata</span></a>
+      </div>
+      <div class="btn-note">40 minutos · Sin costo · Sales con un reporte de dónde estás perdiendo dinero</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ===================== PROBLEMA ===================== -->
+<section id="problema">
+  <div class="wrap"><div class="rv">
+    <div class="eyebrow">El problema</div>
+    <h2>ESTO SE DICE EN LOS<br><span class="neon">PASILLOS</span> DE TU ÁREA COMERCIAL</h2>
+  </div></div>
+  <div class="marquee"><div class="track">
+    <div class="q">"Otra vez nadie actualizó el CRM."</div>
+    <div class="q">"Los de ventas son muy desordenados."</div>
+    <div class="q">"Es que les falta motivación."</div>
+    <div class="q">"Cada vendedor tiene su estilo."</div>
+    <div class="q">"Otra vez nadie actualizó el CRM."</div>
+    <div class="q">"Los de ventas son muy desordenados."</div>
+    <div class="q">"Es que les falta motivación."</div>
+    <div class="q">"Cada vendedor tiene su estilo."</div>
+  </div></div>
+  <div class="marquee"><div class="track rev">
+    <div class="q">"Hay que dar más seguimiento."</div>
+    <div class="q">"Cuando entra alguien nuevo, tarda meses en producir."</div>
+    <div class="q">"Este mes se nos cayó todo al final."</div>
+    <div class="q">"Ese cliente ya venía difícil."</div>
+    <div class="q">"Hay que dar más seguimiento."</div>
+    <div class="q">"Cuando entra alguien nuevo, tarda meses en producir."</div>
+    <div class="q">"Este mes se nos cayó todo al final."</div>
+    <div class="q">"Ese cliente ya venía difícil."</div>
+  </div></div>
+</section>
+
+<!-- ===================== NO ES TALENTO ===================== -->
+<section><div class="wrap"><div class="split">
+  <div class="rv"><div class="stmt" data-par="0.06">NO ES<br>FALTA DE<br>TALENTO.</div></div>
+  <div class="rv">
+    <p>La mayoría de los equipos comerciales con ventas inconsistentes no tienen un problema de talento. Tienen vendedores capaces, producto competitivo y mercado disponible.</p>
+    <p style="font-size:24px;font-weight:500;color:var(--ink);margin:26px 0">Lo que no tienen es <span class="neon">método</span>.</p>
+    <p>Sin método, cada vendedor improvisa. Cada conversación de venta arranca desde cero. Cada persona nueva tarda meses en producir. Y la dirección termina cargando con los cierres importantes, porque nadie más en el equipo está formado para hacerlos.</p>
+    <p style="color:var(--mute);font-size:16px">Contratar mejores vendedores no lo arregla. Lo aplaza, hasta que ese vendedor se va y se lleva el método consigo — porque el método era él.</p>
+  </div>
+</div></div></section>
+
+<!-- ===================== QUÉ ES FOX ===================== -->
+<section><div class="wrap">
+  <div class="rv">
+    <div class="eyebrow">El programa</div>
+    <h2>FOX TRAINING</h2>
+    <p class="lead">Cuatro semanas. Dieciséis horas. Un equipo completo aprendiendo bajo el mismo método, con marcos y herramientas que se aplican sobre la operación real de tu empresa desde la primera sesión.</p>
+    <p class="lead" style="color:var(--mute);font-size:16px">No es un curso. Un curso lo tomas y se te olvida. Esto es una intervención con evaluación individual al final, para que sepas quién quedó formado y quién no.</p>
+  </div>
+  <div class="rows">
+    <div class="row rv"><span class="n">01</span><div><div class="t">Diagnóstico antes de entrenar</div><div class="d">Revisamos cómo vende hoy tu equipo y con qué números arranca. Los cuatro módulos salen de ahí, no de un catálogo.</div></div></div>
+    <div class="row rv"><span class="n">02</span><div><div class="t">16 horas sobre tu operación real</div><div class="d">Se trabaja con tus prospectos y tus objeciones de esa semana. Nada de casos de manual.</div></div></div>
+    <div class="row rv"><span class="n">03</span><div><div class="t">Playbook para cada vendedor</div><div class="d">Se lo llevan y les queda. Cuando entre alguien nuevo, ya hay algo escrito que darle.</div></div></div>
+    <div class="row rv"><span class="n">04</span><div><div class="t">Evaluación práctica individual</div><div class="d">Cada quien pasa por su evaluación en la última sesión. No hay diploma por asistir.</div></div></div>
+    <div class="row rv"><span class="n">05</span><div><div class="t">Reporte a dirección</div><div class="d">Quién está ejecutando, quién necesita acompañamiento y quién no va a llegar. Esa conversación te la ahorras.</div></div></div>
+    <div class="row rv"><span class="n">06</span><div><div class="t">Medición a los 60 días</div><div class="d">Volvemos a levantar los mismos números del diagnóstico y los comparamos. Sin encuestas de satisfacción.</div></div></div>
+  </div>
+</div></section>
+
+<!-- ===================== CÓMO FUNCIONA ===================== -->
+<section><div class="wrap">
+  <div class="rv">
+    <div class="eyebrow">Cómo funciona</div>
+    <h2>CUATRO SEMANAS.<br>NADIE SALE DE OPERACIÓN.</h2>
+    <p class="lead">Dos sesiones por semana. Tu equipo sigue vendiendo mientras aprende, y lo que ve el martes lo aplica el miércoles.</p>
+  </div>
+  <div class="weeks">
+    <div class="wk">
+      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="brk" pathLength="1" stroke="" d="M6 15V6h9"/><path class="brk" pathLength="1" stroke="" d="M42 33v9h-9"/>
+        <circle pathLength="1" stroke="" cx="24" cy="24" r="9"/>
+        <path pathLength="1" stroke="" d="M24 9v4"/><path pathLength="1" stroke="" d="M24 35v4"/>
+        <path pathLength="1" stroke="" d="M9 24h4"/><path pathLength="1" stroke="" d="M35 24h4"/>
+        <circle class="fill" cx="24" cy="24" r="2.6"/>
+      </svg>
+      <div class="n">Semana 01</div><h4>MENTALIDAD Y AUTOCONCIENCIA</h4><p>Inteligencia emocional aplicada a la venta, psicología del dinero y creencias limitantes. El perfil del vendedor profesional.</p>
+    </div>
+    <div class="wk">
+      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="brk" pathLength="1" stroke="" d="M6 15V6h9"/><path class="brk" pathLength="1" stroke="" d="M42 33v9h-9"/>
+        <path pathLength="1" stroke="" d="M20.5 18.6a7 7 0 0 1 0 10.8"/>
+        <path pathLength="1" stroke="" d="M23.7 14.8a12 12 0 0 1 0 18.4"/>
+        <path pathLength="1" stroke="" d="M26.9 11a17 17 0 0 1 0 26"/>
+        <circle class="fill" cx="16" cy="24" r="2.8"/>
+      </svg>
+      <div class="n">Semana 02</div><h4>INFLUENCIA Y ATRACCIÓN</h4><p>Posicionamiento personal, ventas de valor, cliente ideal y construcción de una oferta que se defiende sola.</p>
+    </div>
+    <div class="wk">
+      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="brk" pathLength="1" stroke="" d="M6 15V6h9"/><path class="brk" pathLength="1" stroke="" d="M42 33v9h-9"/>
+        <path pathLength="1" stroke="" d="M10 12h16v11h-8l-4 4v-4h-4Z"/>
+        <path pathLength="1" stroke="" d="M22 20h16v11h-7l-4 4v-4h-5Z"/>
+        <circle class="fill" cx="30" cy="25.5" r="1.7"/><circle class="fill" cx="35" cy="25.5" r="1.7"/>
+      </svg>
+      <div class="n">Semana 03</div><h4>CONVERSACIÓN DE ALTO VALOR</h4><p>Prospección estratégica, modelo conversacional estructurado y manejo profesional de objeciones.</p>
+    </div>
+    <div class="wk">
+      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="brk" pathLength="1" stroke="" d="M6 15V6h9"/><path class="brk" pathLength="1" stroke="" d="M42 33v9h-9"/>
+        <path pathLength="1" stroke="" d="M10 38h28"/>
+        <path pathLength="1" stroke="" d="M12 32l8-6 7 2 9-12"/>
+        <path pathLength="1" stroke="" d="M30 15h6v6"/>
+        <circle class="fill" cx="20" cy="26" r="2"/><circle class="fill" cx="27" cy="28" r="2"/>
+      </svg>
+      <div class="n">Semana 04</div><h4>CONTROL Y MEJORA CONTINUA</h4><p>Sistemas de control comercial, venta por actividades, hábitos del vendedor profesional y evaluación final.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===================== CASO ===================== -->
+<section><div class="wrap">
+  <div class="rv">
+    <div class="eyebrow">Caso real</div>
+    <h2>DE 18 A 50 UNIDADES AL MES.</h2>
+  </div>
+  <div class="case rv">
+    <div class="metric" id="metric">+50%<small>Incremento documentado<br>en 18 meses</small></div>
+    <div>
+      <div class="brand">CDECAR · Broker Automotriz</div>
+      <p>Dos años de implementación del sistema sobre el equipo comercial completo, en formato de acompañamiento sostenido.</p>
+      <p style="color:var(--mute);font-size:16px;margin-bottom:0">No cambiaron de vendedores. Cambiaron cómo venden.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===================== GARANTÍA ===================== -->
+<section><div class="wrap">
+  <div class="rv"><div class="eyebrow">La garantía</div></div>
+  <div class="guarantee rv">
+    <div class="shine"></div>
+    <div class="stampy">Sin letra chica</div>
+    <h3>SI UN VENDEDOR NO APRUEBA LA EVALUACIÓN,<br>REPITE EL PROGRAMA COMPLETO SIN COSTO.</h3>
+    <p>Única condición: haber asistido al menos al 80% de las sesiones. Quien no la cumple no entra a evaluación — y eso también te dice algo.</p>
+  </div>
+</div></section>
+
+<!-- ===================== OBJECIONES ===================== -->
+<section><div class="wrap">
+  <div class="rv">
+    <div class="eyebrow">Lo que normalmente preguntan</div>
+    <h2>ANTES DE DECIDIR</h2>
+  </div>
+  <div style="margin-top:34px" class="rv">
+    <details class="obj"><summary>Mi equipo no puede salir cuatro días a capacitarse.</summary>
+      <div class="a"><p>Por eso son dos sesiones por semana durante cuatro semanas, no un bloque intensivo. Nadie sale de piso más de unas horas y siguen vendiendo todo el mes. Además el ejercicio se hace con los prospectos que traen esa semana, así que el tiempo en sala también es tiempo trabajando.</p></div>
+    </details>
+    <details class="obj"><summary>Ya llevé a mi gente a un curso y no sirvió de nada.</summary>
+      <div class="a"><p>Casi seguro fue un curso genérico, sin diagnóstico previo y sin nada que medir después. Aquí hay tres diferencias: los módulos salen del diagnóstico de tu equipo, cada persona pasa por evaluación individual, y a los 60 días se comparan los números contra el punto de partida.</p><p>Si no se movieron, lo vas a saber tú antes que yo.</p></div>
+    </details>
+    <details class="obj"><summary>¿Y si entrenamos a la gente y se va?</summary>
+      <div class="a"><p>Peor es que no la entrenes y se quede. Pero el argumento de fondo es otro: el programa deja documentado el método y un playbook por persona. Si alguien se va, el método se queda en la empresa. Hoy, si se va tu mejor vendedor, se lleva todo lo que sabía.</p></div>
+    </details>
+    <details class="obj"><summary>¿Esto funciona en mi industria?</summary>
+      <div class="a"><p>El trabajo se concentra en empresas del norte de México con equipos comerciales de entre 3 y 30 personas, principalmente automotriz, agencias de seminuevos y proyectos de venta consultiva. Si tu venta es de ticket alto y depende de una conversación, encaja. Si vendes por volumen en punto de venta, probablemente no soy la persona — y te lo voy a decir en el Scanner.</p></div>
+    </details>
+    <details class="obj"><summary>¿Cuánto cuesta?</summary>
+      <div class="a"><p>Depende del tamaño del grupo y de lo que salga del diagnóstico, y no tiene sentido darte un número sin saber qué está roto. El Scanner es gratis, dura 40 minutos y de ahí sale una propuesta con precio cerrado. Si no aplica, te lo digo y no pasa nada.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<!-- ===================== CIERRE ===================== -->
+<div class="close" id="scanner">
+  <div class="halo"></div>
+  <div class="wrap"><div class="close-inner">
+    <div class="rv">
+      <svg class="ico big" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="brk" pathLength="1" stroke="" d="M4 14V4h10"/><path class="brk" pathLength="1" stroke="" d="M34 4h10v10"/>
+        <path class="brk" pathLength="1" stroke="" d="M4 34v10h10"/><path class="brk" pathLength="1" stroke="" d="M44 34v10H34"/>
+        <circle pathLength="1" stroke="" cx="24" cy="24" r="11"/>
+        <path pathLength="1" stroke="" d="M6 24h36"/>
+        <circle class="fill" cx="24" cy="24" r="3"/>
+      </svg>
+      <div class="eyebrow" style="justify-content:center">El primer paso</div>
+      <h2>EMPIEZA POR SABER<br><span class="neon">DÓNDE ESTÁS PERDIENDO DINERO.</span></h2>
+      <p class="lead">El Scanner es un diagnóstico de 40 minutos sobre tu proceso comercial. Sales con las fallas críticas identificadas y una ruta concreta. Sin costo y sin compromiso de contratar nada.</p>
+      <a class="btn" href="https://wa.me/526142468106?text=Hola%20Orlando%2C%20quiero%20agendar%20un%20Scanner%20para%20mi%20equipo%20comercial." target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','Lead');"><span>Agendar por WhatsApp</span></a>
+      <div class="btn-note">O déjame tus datos y yo te busco</div>
+    </div>
+
+    <!-- =============================================================
+         FORMULARIO — conéctalo a tu Google Sheet:
+         Sheet > Extensiones > Apps Script > pega el doPost >
+         Implementar como aplicación web > copia la URL /exec
+         y ponla abajo en SHEET_URL.
+    ============================================================= -->
+    <form class="form rv" id="leadForm">
+      <label for="n">Nombre</label>
+      <input id="n" name="nombre" type="text" required placeholder="Tu nombre">
+      <label for="e">Empresa</label>
+      <input id="e" name="empresa" type="text" required placeholder="Nombre de la empresa">
+      <label for="t">WhatsApp</label>
+      <input id="t" name="telefono" type="tel" required placeholder="614 000 0000">
+      <label for="s">¿De cuántas personas es tu equipo comercial?</label>
+      <select id="s" name="tamano">
+        <option>1 a 3</option><option>4 a 8</option><option>9 a 15</option><option>Más de 15</option>
+      </select>
+      <button class="btn" type="submit"><span id="btnTxt">Quiero mi Scanner</span></button>
+    </form>
+  </div></div>
+</div>
+
+<footer><div class="wrap">
+  <span class="logo">BRA<b>VA</b></span>
+  <div class="contact">
+    <a href="https://wa.me/526142468106" target="_blank" rel="noopener">(614) 246-8106</a><br>
+    <a href="mailto:orlando@arewamx.com">orlando@arewamx.com</a><br>
+    <a href="https://instagram.com/orlandomunozf" target="_blank" rel="noopener">@orlandomunozf</a>
+  </div>
+  <div style="font-family:var(--mono);font-size:11px;color:#37443C;letter-spacing:.1em;margin-top:26px">BRAVA BY ORLANDO MUÑOZ · CHIHUAHUA, MÉXICO</div>
+</div></footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn" href="#scanner"><span>Agendar mi Scanner gratis</span></a>
+</div>
+
+<script>
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hero = document.getElementById('hero');
+function goHero(){ hero.classList.add('go'); }
+window.addEventListener('load', function(){ setTimeout(goHero, 80); });
+setTimeout(goHero, 800);
+
+var prog=document.getElementById('prog'), nav=document.getElementById('nav'), sticky=document.getElementById('sticky');
+var pars=document.querySelectorAll('[data-par]'), ticking=false;
+function frame(){
+  var y=window.scrollY;
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  prog.style.width=(h>0?(y/h)*100:0)+'%';
+  nav.classList.toggle('solid', y>40);
+  sticky.classList.toggle('show', y>520);
+  if(!reduce){
+    for(var i=0;i<pars.length;i++){
+      var el=pars[i], r=el.getBoundingClientRect();
+      if(r.bottom>0 && r.top<window.innerHeight){
+        var off=(window.innerHeight/2-(r.top+r.height/2))*parseFloat(el.dataset.par);
+        el.style.transform='translate3d(0,'+off.toFixed(1)+'px,0)';
+      }
+    }
+  }
+  ticking=false;
+}
+window.addEventListener('scroll',function(){ if(!ticking){requestAnimationFrame(frame);ticking=true;} },{passive:true});
+window.addEventListener('resize',frame,{passive:true});
+frame();
+
+if('IntersectionObserver' in window && !reduce){
+  var io=new IntersectionObserver(function(ents){
+    ents.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var el=en.target;
+      var sibs=[].slice.call(el.parentNode.children).filter(function(c){return c.classList.contains('rv')||c.classList.contains('wk')});
+      var idx=Math.max(0,Math.min(sibs.indexOf(el),5));
+      el.style.transitionDelay=(idx*85)+'ms';
+      el.classList.add('in');
+      io.unobserve(el);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.rv,.wk').forEach(function(el){io.observe(el)});
+
+  var bo=new IntersectionObserver(function(ents){
+    ents.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('beam');bo.unobserve(en.target);} });
+  },{threshold:0,rootMargin:'-8% 0px -55% 0px'});
+  document.querySelectorAll('section').forEach(function(s){bo.observe(s)});
+}else{
+  document.querySelectorAll('.rv,.wk').forEach(function(el){el.classList.add('in')});
+  document.querySelectorAll('section').forEach(function(s){s.classList.add('beam')});
+}
+
+var metric=document.getElementById('metric');
+if(metric && 'IntersectionObserver' in window && !reduce){
+  var small=metric.querySelector('small').outerHTML, done=false;
+  new IntersectionObserver(function(e,obs){
+    if(e[0].isIntersecting && !done){
+      done=true; var v=0;
+      var t=setInterval(function(){
+        v+=2; if(v>=50){v=50;clearInterval(t);}
+        metric.innerHTML='+'+v+'%'+small;
+      },26);
+      obs.disconnect();
+    }
+  },{threshold:.5}).observe(metric);
+}
+
+/* ==== Conectado al CRM de Finanzas Arewá vía Apps Script ==== */
+var SHEET_URL='https://script.google.com/macros/s/AKfycbxu-7_-2uLLbeI70Iq_EGYRN1PMR2cKPgJATPCyWa5nCEAz7A4lj6QPbeNyvPriuwwF/exec';
+document.getElementById('leadForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var f=ev.target, txt=document.getElementById('btnTxt');
+  var data={nombre:f.nombre.value,empresa:f.empresa.value,telefono:f.telefono.value,tamano:f.tamano.value};
+  txt.textContent='Enviando...';
+  if(window.fbq) fbq('track','Lead');
+  fetch(SHEET_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(data)})
+    .then(function(){
+      f.innerHTML='<div style="text-align:center;padding:26px 0"><div style="font-family:var(--display);font-size:32px;color:var(--neon);letter-spacing:.03em">LISTO.</div><p style="color:var(--mute);margin:12px 0 0;font-size:15px">Te busco hoy mismo por WhatsApp para agendar tu Scanner.</p></div>';
+    })
+    .catch(function(){ txt.textContent='Algo falló — escríbeme por WhatsApp'; });
+});
+</script>
+
+</body>
+</html>
